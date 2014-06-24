@@ -1,0 +1,15 @@
+---
+layout: default
+title: WebCreate.lk - Beautiful websites
+---
+
+<div id="home">
+  <h1>We design and develop beautiful websites. <span style="color: #1abc9c;">WebCreate</span> offers site profiles (website templates) designed &amp; developed by industry experts.</h1>
+ <hr/>
+  <p>We are in a process of shifting our website into new server.</p>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
