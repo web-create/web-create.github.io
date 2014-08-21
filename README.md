@@ -2,7 +2,7 @@
 
 The official website source of the [WebCreate.lk][webcreate].
 
-#### Feedback/Work
+#### Feedback
 
 Please raise as an issue on [Github issues][issues], We love to response.
 
