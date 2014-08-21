@@ -1,6 +1,6 @@
 # Web-Create
 
-The official source of the [WebCreate.lk][webcreate].
+The official source of the [webcreate.lk][webcreate]
 
 #### Feedback
 
