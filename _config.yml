@@ -1,3 +1,31 @@
-name: Your New Jekyll Site
-markdown: redcarpet
-pygments: true
+# Site settings
+title: WebCreate.lk - Beautiful websites
+description: 
+ Free Web Templates / Jekyll Themes / Processwire site profiles. 
+ WebCreate.lk Specialized in developing well focused websites and 
+ handy print designs.
+# Site live URL
+#url: http://webcreate.lk
+
+# Exclude files
+exclude: 
+ - CNAME
+ - Gemfile
+ - Rakefile
+ - README.md
+ - .gitignore
+ - .sass-cache
+ - Gemfile.lock
+
+# Site development URL
+url: http://localhost:4000
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: pygments
+
+# Sass conversion configurations
+sass:
+ sass_dir: assets/css/_sass
+ style: :compressed
