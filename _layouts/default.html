@@ -3,45 +3,51 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="WebCreate specialized in developing well focused websites and handy print designs in a well communicative fashion for reasonable price. webcreate.lk">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <meta name="description" content="{{ site.description }}">
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+        <!-- Harmony styles -->
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <!-- Modernizr js -->
+        <script src="{{ site.baseurl }}/assets/js/modernizr.js"></script>    
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-	<script type="text/javascript"> 
+        <!-- Load google font -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-	  var _gaq = _gaq || []; 
-	  _gaq.push(['_setAccount', 'UA-42430656-1']); 
-	  _gaq.push(['_trackPageview']); 
-
-	  (function() { 
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
-	  })(); 
-
-	</script> 
+        <script type="text/javascript">
+            WebFontConfig = {
+              google: { families: [ 'Open+Sans::latin' ] }
+            };
+            
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
     </head>
-    <body>
-
-        <div class="site">
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                webcreate.lk<br/>
-                Email: webcreatelk@gmail.com<br/>
-                Tel: +94712288104<br/>
-              </p>
+    <body>        
+      <header id="wc-main-header">
+        <div class="wc-container">        
+            <div id="wc-logo">
+                <a href="{{ site.baseurl }}/">
+                  <img src="{{ site.baseurl }}assets/css/images/webcreate-lk-logo.png"/>
+                </a>
             </div>
-          </div>
         </div>
-
+      </header>
+      {{ content }}
     </body>
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- When no internet load JQuery from local -->
+    <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/jquery.min.js"><\/script>')</script>
+    <!-- Site js -->
+    <script src="{{ site.baseurl }}/assets/js/all.js"></script>
 </html>
