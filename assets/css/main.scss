@@ -208,7 +208,7 @@ strong { font-weight: 600; }
 .to-upper { text-transform: uppercase;}
 
 #wc-main-header {
-  border-bottom: 1px solid $color-2;
+  border-top: 1px solid $color-2;
   height: $header-height-S;  
 
   @include MQ(M) {
@@ -219,7 +219,7 @@ strong { font-weight: 600; }
 
 #wc-logo {
   float: left;  
-  margin-top: 8px;
+  margin-top: 9px;
   img {
     display: block;        
     max-height: $header-height-S - 20;    
@@ -235,12 +235,12 @@ div.hero-unit {
   text-align: center;
 
   @include MQ(M) {  
-    padding: 150px 50px;
+    padding: 200px 50px 150px 50px;
   }
   
   h1 {    
     @include MQ(M) {
-      @include font-size(60px);
+      @include font-size(50px);
     }
   }  
 }
