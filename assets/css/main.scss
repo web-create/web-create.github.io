@@ -319,10 +319,10 @@ div.hero-unit {
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   width: 90%;
-  max-width: 1170px;
+  max-width: $L;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  color: white;
+  text-shadow: #777 0px 0px 6px;
+  color: $color-white;
   @include MQ(M) { 
     @include font-size(50px);
   }
