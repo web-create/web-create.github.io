@@ -1,12 +1,82 @@
 ---
 ---
 
-//Rest 
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ * Layouts..............Layouts.
+ *
+ * GENERIC
+ * Reset.css............Rest styles.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Body-styles..........Generic Body styles
+ * Headings.............H1–H6 & Paragraph styles.
+ * Anchor...............Common anchor styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ *
+ * HELPERS
+ * Text.................Text helpers.
+ */
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
+/*------------------------------------*\
+  #SETTINGS
+\*------------------------------------*/
+
+/** 
+ * Import colors, fonts etc...
+ */
+
+@import "partials/variables";
+
+
+
+
+
+/*------------------------------------*\
+  #TOOLS
+\*------------------------------------*/
+
+/** 
+ * Import custom mixins
+ */
+
+@import "partials/mixins";
+
+/**
+ * Import layout mixin
+ */
+@import "partials/layout";
+
+
+
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/**
+ *
+ * Reset styles thanks to meyerweb.com.
+ * http://meyerweb.com/eric/tools/css/reset/ 
+ * v2.0 | 20110126
+ * License: none (public domain)
+ *
+ */ 
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,20 +122,9 @@ table {
   border-spacing: 0;
 }
 
-// Import colors, fonts etc...
-@import "partials/variables";
-
-// Import custom mixins
-@import "partials/mixins";
-
-// Import layout mixin
-@import "partials/layout";
-
-/* -------------------------------- 
-
- Primary style
-
--------------------------------- */
+/*
+ * Box sizing override
+ */
 
 html * {
   -webkit-font-smoothing: antialiased;
@@ -76,6 +135,17 @@ html * {
   @include box-sizing(border-box);
 }
 
+
+
+
+
+/*------------------------------------*\
+  #BASE
+\*------------------------------------*/
+
+/*
+ * Generic Body styles
+ */
 body {
   font: {
     size: 100%;
@@ -83,44 +153,9 @@ body {
   }  
 }
 
-.wc-container {
-    width: 90%;
-    max-width: $L; // see breakpoints in _sass/partials/_layout.scss
-    margin: 0 auto;
-
-    &::after { /* Clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
-}
-
-.wc-container-small {
-    width: 90%;
-    max-width: $M; // see breakpoints in _sass/partials/_layout.scss
-    margin: 0 auto;
-
-    &::after { /* Clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
-}
-
-.wc-img-replace { /* replace text with a background-image */
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* --------------------------------
-
- Small Typography
-
---------------------------------- */
+/* 
+ * Typography styles 
+ */
 
 h1, h2, h3, h4, h5, h6 { 
   line-height: 1.6;
@@ -128,7 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  // mobile first
   @include font-size(20px);
   @include MQ(M) {
     @include font-size(36px);
@@ -136,7 +170,6 @@ h1 {
 }
 
 h2 {
-  // mobile first
   @include font-size(18px);
   @include MQ(M) {
     @include font-size(31px);
@@ -179,14 +212,19 @@ p {
   }
 }
 
+/*
+ * Anchor styles
+ */ 
 a {
   background: transparent;
+  &:active, &:hover, &:focus {
+    outline: 0;
+  }
 }
 
-a:active, a:hover, a:focus {
-  outline: 0;
-}
-
+/*
+ * Responsive images
+ */
 img {
   border: 0;
   display: block;
@@ -194,7 +232,9 @@ img {
   height: auto;
 }
 
-
+/*
+ * Default horizontal style
+ */
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -203,32 +243,37 @@ hr {
   height: 0;
 }
 
-strong { font-weight: 600; }
 
-.to-upper { text-transform: uppercase;}
+
+
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+
+
+
+
+/*
+ * Main header wrapper.
+ */
 
 #wc-main-header {
   border-top: 1px solid $color-2;
   height: $header-height-S;  
-
+  position: absolute;
+  top:0;
+  z-index: 2;
+  width: 100%;
   @include MQ(M) {
     height: $header-height-M;
   }
-
 }
 
-#wc-logo {
-  float: left;  
-  margin-top: 9px;
-  img {
-    display: block;        
-    max-height: $header-height-S - 20;    
-    @include MQ(M) {
-      max-height: $header-height-M;      
-    }  
-  }
-}
-
+/*
+ * Hero unit wrapper on the home page.
+ */
 div.hero-unit {
   color: $color-4;  
   padding: 80px 25px;
@@ -244,3 +289,102 @@ div.hero-unit {
     }
   }  
 }
+
+/*
+ * Fixed background wrapper 
+ */
+.wc-fixed-bg {
+  height: 200px;
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  @include MQ(M) {
+    height: 610px;
+    background-attachment: fixed;
+  }
+}
+
+.wc-fixed-bg h1, .wc-fixed-bg h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  max-width: 1170px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: white;
+  @include MQ(M) { 
+    @include font-size(50px);
+  }
+}
+
+.wc-fixed-bg.wc-bg-1 {
+  background-image: url("./images/home-hero-bg.jpg");
+}
+
+/*
+ * Latest resources wrapper
+ */
+.latest-recources {
+  padding: 2em 0; 
+  h2 { text-align:center; }
+}
+
+.wc-container {
+    width: 90%;
+    max-width: $L; // see breakpoints in _sass/partials/_layout.scss
+    margin: 0 auto;
+
+    &::after { /* Clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.wc-container-small {
+    width: 90%;
+    max-width: $M; // see breakpoints in _sass/partials/_layout.scss
+    margin: 0 auto;
+
+    &::after { /* Clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.wc-img-replace { /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#wc-logo {
+  float: left;  
+  margin-top: 9px;
+  img {
+    display: block;        
+    max-height: $header-height-S - 20;    
+    @include MQ(M) {
+      max-height: $header-height-M;      
+    }  
+  }
+}
+
+
+strong { font-weight: 600; }
+.to-upper { text-transform: uppercase;}
