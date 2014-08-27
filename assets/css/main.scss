@@ -323,7 +323,7 @@ div.hero-unit {
   width: 90%;
   max-width: $L;
   text-align: center;
-  text-shadow: #777 0px 0px 6px;
+  text-shadow: #777 0 1px 9px;
   color: $color-white;
   @include MQ(M) { 
     @include font-size(45px);
