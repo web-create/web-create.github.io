@@ -456,9 +456,9 @@ Footer block
     } 
 
     address,p { 
-      @include font-size(13px);
+      @include font-size(12px);
       line-height: 1.7; 
-      padding-right: 5px;
+      padding-right: 12px;
     }
 
     .column {
