@@ -493,12 +493,12 @@ Footer block
     a {
         border-bottom: 1px solid rgba(198, 70, 61, 0);
         text-decoration: none;
-        color: darken($footer-fg, 10%);        
+        color: darken($color-6, 10%);        
         @include transition(all 0.2s);
     }
     
     a:hover {
-        border-bottom: 1px solid $color-1;
+        border-bottom: 1px solid $color-6;
     }
 
     ul.list-inline {
@@ -547,13 +547,16 @@ Footer block
             border-radius: 0.25em;
             @include transition(background-color 0.2s);
             border-bottom: none;
+
+            &:hover, &:focus, &:active {
+              background-color: $color-6;
+            }
         }
         
         li a.twitter {
             background-position: 0 0;
             &:hover {
                 background-position: 0 -32px;
-                background-color: $color-3;
             } 
         }
 
@@ -561,35 +564,30 @@ Footer block
             background-position: -32px 0;
             &:hover {
                 background-position: -32px -32px;
-                background-color: $color-3;
             }
         }
         li a.facebook {
             background-position: -64px 0;
             &:hover {
                 background-position: -64px -32px;
-                background-color: $color-3
             }
         }
         li a.dribble {
             background-position: -96px 0;
             &:hover {
                 background-position: -96px -32px;
-                background-color: $color-3
             }
         }
         li a.google {
             background-position: -128px 0;
             &:hover {
                 background-position: -128px -32px;
-                background-color: $color-3
             }
         }
         li a.pinterest {
             background-position: -196px 0;
             &:hover {
                 background-position: -196px -32px;
-                background-color: $color-3
             }
         }
     }   
