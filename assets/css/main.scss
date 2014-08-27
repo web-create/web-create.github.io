@@ -455,23 +455,30 @@ Footer block
         overflow: hidden;
     } 
 
-    address,p { font-size: 13px;line-height: 1.7;}
+    address,p { 
+      @include font-size(13px);
+      line-height: 1.7; 
+      padding-right: 5px;
+    }
 
     .column {
-        float:left;
-        @include column(.3);
-
-        @include MQ(XS) {
-            &:nth-child(1) {
-                @include column(.5);
-            }
-            &:nth-child(2) {
-                @include column(.5)
-            }
-            &:nth-child(3) {
-                margin-top: 20px;
-                @include column(1);
-            }
+        float:left;              
+        @include column(.5);
+        &:nth-child(1) {
+            @include column(.5);
+        }
+        &:nth-child(2) {
+            @include column(.5)
+        }
+        &:nth-child(3) {
+            margin-top: 20px;
+            @include column(1);
+        }        
+        @include MQ(M) {          
+          @include column(.3333); 
+          &:nth-child(n) {
+              @include column(.3333);
+          }
         }
     }
 
