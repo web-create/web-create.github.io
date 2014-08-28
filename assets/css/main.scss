@@ -546,6 +546,7 @@ div.hero-unit {
       
       @include font-size(13px); 
       font-weight: 600;
+      margin-bottom: 0;
       a {
         color: $color-6;
       }
@@ -553,6 +554,7 @@ div.hero-unit {
 
     footer p { 
       @include font-size(13px); 
+      margin-bottom: 0;
     }
   } 
 
