@@ -451,16 +451,43 @@ div.hero-unit {
 
   article {
     margin-bottom: 1.5em;
-    box-shadow: 0 1px 1px rgba($color-black, .2);
+    box-shadow: 0 1px 2px rgba($color-black, .2);
+    
+    .frame {
+      background-color: $color-7;
+      height: 7px;
+      padding: 10px 8px 12px 8px;
+      -webkit-border-radius: .25em .25em 0 0;
+      border-radius: .25em .25em 0 0;
+      display: block;
+      width: 100%;
+    }
+
+    .frame .dots {
+      float: left;
+      height: 6px;
+      width: 6px;      
+      background-color: #BDBDBD;
+      margin-right: 4px;      
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+
+      &:nth-child(1) { background-color:#FF4E3D; }
+      &:nth-child(2) { background-color: $color-2; }
+      &:nth-child(3) { background-color: $color-1; }
+    }
+
     img {
       width: 100%;
       display: block;
-      -webkit-border-radius: .25em .25em 0 0;
-      border-radius: .25em .25em 0 0;
+      // -webkit-border-radius: .25em .25em 0 0;
+      // border-radius: .25em .25em 0 0;
       @include transition(opacity, 0.2s);
     }   
 
     footer {
+      display: none;
       background-color: $color-6;
       padding: 10px;          
       -webkit-border-radius: 0 0 .25em .25em ;
@@ -472,10 +499,10 @@ div.hero-unit {
       @include transition(all, 0.2s);
       text-decoration: none;
       &:hover, &:focus, &:active {
-        opacity: .8;
-        img {
-          opacity: .9;
-        }
+        // opacity: .8;
+        // img {
+          // opacity: .9;
+        // }
       } 
     }
 
@@ -633,12 +660,15 @@ div.hero-unit {
         li > a {
             width: 32px;
             height: 32px;
-            background-color: rgba(239, 239, 239, 0);
+            background-color: rgba($color-7, .7);
             background-image: url("./images/socials-icons.svg");
             background-size: 224px 64px;
             border-radius: 0.25em;
             @include transition(background-color 0.2s);
             border-bottom: none;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
             &:hover, &:focus, &:active {
               background-color: $color-6;
