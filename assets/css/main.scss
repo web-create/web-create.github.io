@@ -451,39 +451,39 @@ div.hero-unit {
 
   article {
     margin-bottom: 1.5em;
-    box-shadow: 0 1px 2px rgba($color-black, .2);
-    
-    .frame {
+    // box-shadow: 0 1px 2px rgba($color-black, .2);        
+    .frame {      
       background-color: $color-7;
       height: 7px;
-      padding: 10px 8px 12px 8px;
+      padding: 9px 8px 15px 8px;
       -webkit-border-radius: .25em .25em 0 0;
       border-radius: .25em .25em 0 0;
       display: block;
       width: 100%;
+      -webkit-box-shadow: 0 0 2px 0px rgba($color-black,.2);
+      box-shadow: 0 0 2px 0px rgba($color-black,.2);
     }
 
     .frame .dots {
       float: left;
       height: 6px;
       width: 6px;      
-      background-color: #BDBDBD;
-      margin-right: 4px;      
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-
-      &:nth-child(1) { background-color:#FF4E3D; }
-      &:nth-child(2) { background-color: $color-2; }
-      &:nth-child(3) { background-color: $color-1; }
+      background-color: $frame-bg;
+      margin-right: 4px;            
+      @include border-radius(50%);
+      &:nth-child(1) { background-color: $frame-dot-1; }
+      &:nth-child(2) { background-color: $frame-dot-2; }
+      &:nth-child(3) { background-color: $frame-dot-3; }
     }
 
     img {
       width: 100%;
       display: block;
-      // -webkit-border-radius: .25em .25em 0 0;
-      // border-radius: .25em .25em 0 0;
       @include transition(opacity, 0.2s);
+      // -webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,.2);
+      // box-shadow: 0 1px 2px 1px rgba(0,0,0,.2);
+      -webkit-box-shadow: 0 0 2px 0px rgba($color-black,.2);
+      box-shadow: 0 0 2px 0px rgba($color-black,.2);
     }   
 
     footer {
@@ -497,13 +497,7 @@ div.hero-unit {
     a { 
       color: $color-white;
       @include transition(all, 0.2s);
-      text-decoration: none;
-      &:hover, &:focus, &:active {
-        // opacity: .8;
-        // img {
-          // opacity: .9;
-        // }
-      } 
+      text-decoration: none;      
     }
 
     footer h3 { 
