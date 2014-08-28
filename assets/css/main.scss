@@ -151,6 +151,7 @@ body {
     size: 100%;
     family: $primary-font; // variables inside partials > _variables.scss
   }  
+  color: $color-8;
 }
 
 /* 
@@ -160,6 +161,7 @@ body {
 h1, h2, h3, h4, h5, h6 { 
   line-height: 1.6;
   font-family: $primary-font;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -210,6 +212,7 @@ p {
   @include MQ(M) {
     @include font-size(18px);
   }
+  margin-bottom: 10px;
 }
 
 /*
@@ -579,6 +582,14 @@ div.hero-unit {
         margin-right: 0;
       }
     }
+  }
+}
+
+div.page-content {
+  padding-top: $header-height-S;
+  @include MQ(M) {
+    padding-top: $header-height-M;
+    padding-bottom: 3em;
   }
 }
 
