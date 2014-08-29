@@ -315,6 +315,7 @@ div.hero-unit {
     height: 700px;
     background-attachment: fixed;
   }
+  width: 100%;
 }
 
 .wc-fixed-bg h1, .wc-fixed-bg h2{
@@ -375,9 +376,16 @@ div.hero-unit {
 
 .wc-fixed-bg.wc-bg-1 {
   background-image: url("./images/home-hero-bg.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+  src='./images/home-hero-bg.jpg',
+  sizingMethod='scale');
+
 }
 .wc-fixed-bg.wc-bg-2 {
   background-image: url("./images/home-hero-bg-2.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+  src='./images/home-hero-bg-2.jpg',
+  sizingMethod='scale');
 }
 
 
