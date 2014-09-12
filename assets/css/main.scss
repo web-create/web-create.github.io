@@ -690,6 +690,9 @@ div.page-content .column-right {
         width:100%;
         font-size: 11px;
         padding-top: 20px;
+        @include MQ(M) {
+          padding-top: 0;
+        }
     }
 
     a {
@@ -704,7 +707,6 @@ div.page-content .column-right {
     }
 
     ul.list-inline {
-        padding-top: 10px;
         font-size: 11px;
         display: inline-block;
         /* the key bit */
