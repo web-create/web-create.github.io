@@ -212,14 +212,14 @@ p {
   @include MQ(M) {
     @include font-size(18px);
   }
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /*
  * Anchor styles
  */ 
 a {
-  background: transparent;
+  background: transparent;  
   &:active, &:hover, &:focus {
     outline: 0;
   }
@@ -247,7 +247,21 @@ hr {
 }
 
 
+blockquote {
+  border-left: 4px solid $color-6;
+  background-color: $color-5;
+  padding: 15px 15px 10px; 
+  margin-bottom: 20px;  
+}
 
+blockquote p {
+  @include font-size(14px);
+}
+
+blockquote a {
+  color: $color-6;
+  text-decoration: none;
+}
 
 
 /*------------------------------------*\
