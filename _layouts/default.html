@@ -17,11 +17,11 @@ layout: compress
         <script src="{{ site.baseurl }}/assets/js/modernizr.js"></script>    
 
         <!-- Load google font -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <script type="text/javascript">
             WebFontConfig = {
-              google: { families: [ 'Open+Sans:300:latin' ] }
+                google: { families: [ 'Roboto::latin' ] }
             };
 
             (function() {
@@ -41,22 +41,33 @@ layout: compress
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>        
-      <header id="wc-main-header">
-        <div class="wc-container">        
-            <div id="wc-logo">
-                <a href="{{ site.baseurl }}/">
-                  <img src="{{ site.baseurl }}/assets/css/images/webcreate-lk-logo.png"/>
-                </a>
+    <body>
+        <div id="wc-main-header">
+            <div class="wc-container">
+                <div id="wc-logo">
+                    <a href="{{ site.baseurl }}/">
+                        <img src="{{ site.baseurl }}/assets/css/images/webcreate-lk-logo.png"/>
+                    </a>
+                </div>
+                <nav class="wc-main-nav">                
+                    <ul>
+                        {% for item in site.data.main-nav %}
+                            <li>
+                                <a href="{{ site.url }}{{ item.href }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav> <!-- cd-main-nav -->
             </div>
         </div>
-      </header>
-      {{ content }}
-      {% include main-footer.html %}
+        <div class="wc-container">
+            {{ content }}
+        </div>                
+        {% include main-footer.html %}
         <!-- Google analytics  -->
-        {% include google-analytics.html %}
+        <!-- {% include google-analytics.html %} -->
         <!-- jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
         <!-- When no internet load JQuery from local -->
         <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/jquery.min.js"><\/script>')</script>
         <!-- Site js -->

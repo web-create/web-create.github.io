@@ -1,130 +1,11 @@
 ---
 ---
 
-/**
- * CONTENTS
- *
- * SETTINGS
- * Global...............Globally-available variables and config.
- *
- * TOOLS
- * Mixins...............Useful mixins.
- * Layouts..............Layouts.
- *
- * GENERIC
- * Reset.css............Rest styles.
- * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
- * Body-styles..........Generic Body styles
- * Headings.............H1–H6 & Paragraph styles.
- * Anchor...............Common anchor styles.
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- *
- * HELPERS
- * Text.................Text helpers.
- */
+@import "helpers/all";
 
+@import "base/all";
 
-/*------------------------------------*\
-  #SETTINGS
-\*------------------------------------*/
-
-/** 
- * Import colors, fonts etc...
- */
-
-@import "partials/variables";
-
-
-
-
-
-/*------------------------------------*\
-  #TOOLS
-\*------------------------------------*/
-
-/** 
- * Import custom mixins
- */
-
-@import "partials/mixins";
-
-/**
- * Import layout mixin
- */
-@import "partials/layout";
-
-
-
-
-
-/*------------------------------------*\
-  #GENERIC
-\*------------------------------------*/
-
-/**
- *
- * Reset styles thanks to meyerweb.com.
- * http://meyerweb.com/eric/tools/css/reset/ 
- * v2.0 | 20110126
- * License: none (public domain)
- *
- */ 
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, main {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/*
- * Box sizing override
- */
+@import "modules/all";
 
 html * {
   -webkit-font-smoothing: antialiased;
@@ -135,99 +16,15 @@ html * {
   @include box-sizing(border-box);
 }
 
-
-
-
-
-/*------------------------------------*\
-  #BASE
-\*------------------------------------*/
-
-/*
- * Generic Body styles
- */
 body {
   font: {
     size: 100%;
     family: $primary-font; // variables inside partials > _variables.scss
-  }  
-  color: $color-8;
-}
-
-/* 
- * Typography styles 
- */
-
-h1, h2, h3, h4, h5, h6 { 
-  line-height: 1.6;
-  font-family: $primary-font;
-  margin-bottom: 10px;
-}
-
-h1 {
-  @include font-size(20px);
-  @include MQ(M) {
-    @include font-size(36px);
   }
+  background-color: $body-bg;
+  color: $body-text;
 }
 
-h2 {
-  @include font-size(18px);
-  @include MQ(M) {
-    @include font-size(31px);
-  }
-}
-
-h3 {
-  @include font-size(15px);
-  @include MQ(M) {
-    @include font-size(30px);
-  }
-}
-
-h4 {
-  @include font-size(16px);
-  @include MQ(M) {
-    @include font-size(24px);
-  }
-}
-
-h5 {
-  @include font-size(14px);
-  @include MQ(M) {
-    @include font-size(22px);
-  }
-}
-
-h6 {
-  @include font-size(14px);
-  @include MQ(M) {
-    @include font-size(19px);
-  }
-}
-
-p {
-  line-height: 1.6;
-  @include font-size(14px);
-  @include MQ(M) {
-    @include font-size(18px);
-  }
-  margin-bottom: 20px;
-}
-
-/*
- * Anchor styles
- */ 
-a {
-  background: transparent;  
-  &:active, &:hover, &:focus {
-    outline: 0;
-  }
-}
-
-/*
- * Responsive images
- */
 img {
   border: 0;
   display: block;
@@ -235,223 +32,19 @@ img {
   height: auto;
 }
 
-/*
- * Default horizontal style
- */
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eee;
-  height: 0;
-}
-
-
-blockquote {
-  border-left: 2px solid $color-6;
-  background-color: $color-5;
-  padding: 15px 15px; 
-  margin-bottom: 20px;  
-
-  @include border-radius(0 5px 5px 0px);
-}
-
-blockquote p {
-  @include font-size(14px);
-  margin-bottom: 0;
-}
-
-blockquote a {
-  color: $color-6;
+a {
   text-decoration: none;
 }
 
-
-/*------------------------------------*\
-  #OBJECTS
-\*------------------------------------*/
-
-
-
-
-
-/*
- * Main header wrapper.
- */
-
-#wc-main-header {
-  // border-top: 2px solid $color-2;
-  height: $header-height-S;  
-  position: absolute;
-  top:0;
-  z-index: 2;
-  width: 100%;
-  @include MQ(M) {
-    height: $header-height-M;
-  }
-}
-
-
-
-
-
-
-/*
- * Hero unit wrapper on the home page.
- */
-div.hero-unit {
-  color: $color-4;  
-  padding: 80px 25px;
-  text-align: center;
-
-  @include MQ(M) {  
-    padding: 200px 50px 150px 50px;
-  }
-  
-  h1 {    
-    display: none;
-    
-    @include MQ(M) {
-      @include font-size(50px);
-    }
-  }  
-}
-
-/*
- * Fixed background wrapper 
- */
-.wc-fixed-bg {
-  height: 200px;
-  position: relative;
-  min-height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 1;
-  @include MQ(M) {
-    height: 700px;
-    background-attachment: fixed;
-  }
-  width: 100%;
-}
-
-.wc-fixed-bg h1, .wc-fixed-bg h2{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+div.wc-container {
   width: 90%;
-  max-width: $L;
-  text-align: center;
-  text-shadow: #777 0 1px 9px;
-  color: $color-white;
-  @include MQ(M) { 
-    @include font-size(45px);
-    padding: 45px;
-  }
-}
-
-.wc-fixed-bg h1 {
-  &:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 2rem;
-    height: 2px;
-    background: $color-white;
-    margin-left: -1rem;
-    overflow: hidden;
-    top: -10px;
-
-    @include MQ(M) {
-      top: 10px;
-    }
-  } 
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 2rem;
-    height: 2px;
-    background: $color-white;
-    margin-left: -1rem;
-    overflow: hidden;
-    bottom: -10px;
-
-    @include MQ(M) {
-      bottom: 10px;
-    }
-  }
-}
-
-.wc-fixed-bg.wc-bg-1 {
-  background-image: url("./images/home-hero-bg.jpg");
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-  src='./images/home-hero-bg.jpg',
-  sizingMethod='scale');
-
-}
-.wc-fixed-bg.wc-bg-2 {
-  background-image: url("./images/home-hero-bg-2.jpg");
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-  src='./images/home-hero-bg-2.jpg',
-  sizingMethod='scale');
-}
-
-
-
-
-
-/**
- * Gallery item wrapper
- */
-.gallery-wrapper {
-  background-color: #F8F8F8;
-}
-
-
-
-
-
-/*
- * Latest resources wrapper
- */
-.latest-recources {
-  padding: 3em 0; 
-  h2 { 
-    text-align:center;
-  }
-}
-
-.wc-container {
-    width: 90%;
-    max-width: $L; // see breakpoints in _sass/partials/_layout.scss
-    margin: 0 auto;
-
-    &::after { /* Clearfix */
+  max-width: $L; // see breakpoints in _sass/partials/_layout.scss
+  margin: 0 auto;  
+  &::after { /* Clearfix */
         content: '';
         display: table;
         clear: both;
-    }
-}
-
-.wc-container-small {
-    width: 90%;
-    max-width: $M; // see breakpoints in _sass/partials/_layout.scss
-    margin: 0 auto;
-
-    &::after { /* Clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
+  }
 }
 
 .wc-img-replace { /* replace text with a background-image */
@@ -463,6 +56,28 @@ div.hero-unit {
   background-position: center center;
 }
 
+
+
+/*
+ * Main header wrapper.
+ */
+
+#wc-main-header {
+  // background-color: darken($body-bg, 8%);
+  // border-top: 1px solid darken($body-bg, 12%);
+  background-color: $color-white;
+
+  height: $header-height-S;  
+  position: relative;
+  width: 100%;
+  @include MQ(M) {
+    height: $header-height-M;
+  }
+}
+
+/*
+ * Logo
+ */
 #wc-logo {
   float: left;  
   margin-top: 9px;
@@ -475,156 +90,82 @@ div.hero-unit {
   }
 }
 
+.wc-main-nav {
+  background-color:red;
+  position:absolute;
+  right: 5%;
+  height: $header-height-S;
+  width: 44px;
+  height: 100%;
 
+  background: url('./images/cd-icon-menu.svg') no-repeat center center;
+  background-size: 44px 44px;
+  cursor: pointer;
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include transform(translateY(-100%));
 
-
-
-/**
- * 
- * Post thumbnails
- *
- */
-.wc-gallery-container {  
-  padding: 3em 0;
-  width: 90%;
-  max-width: $L; // breakpoints inside partials > _layout.scss
-  margin: 0 auto;
-  padding-top: 20px; // just for the demo 
-
-  &::after { /* clearfix */
-      content: '';
-      display: table;
-      clear: both;
+    &.is-visible {
+      @include transform(translateY($header-height-S));
+    }
   }
 
-  article {
-    margin-bottom: 1.5em;
-    box-shadow: 0 1px 1px rgba($color-black, 0.1);
-    .frame {      
-      background-color: $color-7;
-      height: 25px;
-      -webkit-border-radius: .25em .25em 0 0;
-      border-radius: .25em .25em 0 0;
-      display: block;
-      width: 100%;
-      position: relative;
-      // display: none;
-    }
-
-    .frame .btn-set {
-      position:absolute;
-      background-color: rgba($color-3, .5);
-      width: 20px;
-      height: 5px;
-      left: 15px;
-      top: 11px;      
-    }
-    .frame .textbar {
-      position:absolute;
-      background-color: $color-white;
-      width: 70%;
-      height: 12px;
-      top: 7px;
-      left: 15%;
-    }
-
-    .frame .menubar {
-      position:absolute;
-      background-color: $color-white;
-      width: 15px;
-      height: 2px;
-      right: 15px;
-      background: rgba($color-3, .5);
-
-      &.one {
-        top: 8px;        
-      }
-      &.two {
-        top: 12px;        
-      }
-      &.three {
-        top: 16px;
-      }
-    }    
-
-    img {
-      width: 100%;
-      display: block;
-      @include transition(opacity, 0.2s);      
-    }   
-
-    footer {
-      background-color: $color-white;
-      border-top: 1px solid $color-5;
-      padding: 10px;          
-      -webkit-border-radius: 0 0 .25em .25em ;
-      border-radius: 0 0 .25em .25em;
-    }
-
-    a { 
-      color: $color-3;
-      @include transition(all, 0.2s);
-      text-decoration: none;      
-    }
-
-    footer h3 { 
-      
-      @include font-size(13px); 
-      font-weight: 600;
-      margin-bottom: 0;
-      a {
-        color: $color-6;
-      }
-    }
-
-    footer p { 
-      @include font-size(13px); 
-      margin-bottom: 0;
-    }
-  } 
+  a {
+    position: relative;
+    display: block;
+    height: $header-height-S;
+    line-height: $header-height-S;
+    padding-left: 5%;
+    // background: $theme-color-6;
+    // border-top: 1px solid darken($theme-color-6, 5);
+    text-transform: uppercase;
+    color: $color-1;
+  }
 
   @include MQ(M) {
-    article {
-      @include column(.48); // see how this mixin works inside partials > _layout.scss
-      margin-bottom: 2em;
-      margin-right: 4%;
+    position:relative;
+    width: auto;
+    height: auto;
+    background: none;
+    cursor: auto;
+    float: right;
+    ul {
+      position: static;
+      width: auto;
+      @include transform(translateY(0));
+      line-height: $header-height-M;
 
-      &:nth-child(2n) {
-        margin-right: 0;
+      &.is-visible {
+        @include transform(translateY(0));
       }
     }
-  }
 
-  @include MQ(L) {
-    article {
-      @include column(.31);
-      margin-bottom: 2.5em;
-      margin-right: 3.5%;
+    li {
+      display: inline-block;
+      margin-left: 1em;
+    }
 
-      &:nth-child(2n) {
-        margin-right: 3.5%;
-      }
+    a {
+      display: inline-block;
+      height: auto;
+      line-height: normal;
+      background: transparent;
+      padding: .6em 1em;
+      border-top: none;
+      color: $color-1;
+      @include font-size(14px);
 
-      &:nth-child(3n) {
-        margin-right: 0;
+      .no-touch &:hover {
+        color: $color-2;
       }
     }
+    li.active {
+      a {color: $color-2;}
+    }
   }
-}
-
-div.page-content {
-  padding-top: $header-height-S;
-  @include MQ(M) {
-    padding-top: $header-height-M;
-    padding-bottom: 3em;
-  }
-}
-
-div.page-content .column-left {
-  @include column(.7);
-}
-div.page-content .column-right {
-  @include column(.3)
 }
 
 
@@ -634,11 +175,10 @@ div.page-content .column-right {
  *
  */
 .footer-section {
-    background-color: $footer-bg;
-    border-top: 1px solid $color-5;
+    background-color: darken($body-bg, 8%);
+    border-top: 1px solid darken($body-bg, 12%);
     padding: 20px 0;
     height:100%;   
-    color: $footer-fg;
     h4 {
         @include font-size(15px);
         position: relative;
@@ -688,22 +228,25 @@ div.page-content .column-right {
     p.copyright {
         @inclue clearfix;
         width:100%;
-        font-size: 11px;
+        display: block;
+        overflow: hidden;
+        @include font-size(12px);
         padding-top: 20px;
         @include MQ(M) {
-          padding-top: 0;
+          padding-top: 5px;
+          padding-bottom: 5px;
         }
     }
 
     a {
-        border-bottom: 1px solid rgba(198, 70, 61, 0);
+        border-bottom: 1px solid transparent;
         text-decoration: none;
-        color: $color-6;        
+        color: $color-1;        
         @include transition(all 0.2s);
     }
     
     a:hover {
-        border-bottom: 1px solid $color-6;
+        border-bottom: 1px solid $color-1;
     }
 
     ul.list-inline {
@@ -725,7 +268,7 @@ div.page-content .column-right {
             width: 6px;
             height: 6px;
             display: inline-block;
-            background: rgba($color-8, .3);
+            background: lighten($body-text, 60%);
             border-radius: 50%;
             margin-left: 2px;
         }
@@ -740,98 +283,67 @@ div.page-content .column-right {
     }
 
     ul.social-media {
-        text-align:left;
-        li { display:inline-block;}
-        li > a {
-            width: 32px;
-            height: 32px;
-            background-color: rgba($color-white, 1);
-            background-image: url("./images/socials-icons.svg");
-            background-size: 224px 64px;
-            border-radius: 0.25em;
-            @include transition(background-color 0.2s);
-            border-bottom: none;
-            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      text-align:left;
+      padding: 0 0 10px 0;
+      li { 
+        display:inline-block;
+        margin-right: 5px;
+      }
+      li > a {
+        width: 32px;
+        height: 32px;
+        background: $color-white;
+        background-image: url("./images/socials-icons.svg");
+        background-size: 224px 64px;
+        border-radius: 0.25em;
+        @include transition(background-color 0.2s);
+        border-bottom-color: transparent;
 
-            &:hover, &:focus, &:active {
-              background-color: $color-6;
-            }
+        &:hover {
+          background-color: $color-1;
         }
-        
-        li a.twitter {
-            background-position: 0 0;
-            &:hover {
-                background-position: 0 -32px;
-            } 
+      }
+    
+      li a.twitter {
+        background-position: 0 0;
+          &:hover {
+            background-position: 0 -32px;
+        } 
+      }
+
+      li a.github {
+        background-position: -32px 0;
+        &:hover {
+          background-position: -32px -32px;
         }
+      }
 
-        li a.github {
-            background-position: -32px 0;
-            &:hover {
-                background-position: -32px -32px;
-            }
+      li a.facebook {
+        background-position: -64px 0;
+        &:hover {
+          background-position: -64px -32px;
         }
-        li a.facebook {
-            background-position: -64px 0;
-            &:hover {
-                background-position: -64px -32px;
-            }
+      }
+
+      li a.dribble {
+        background-position: -96px 0;
+        &:hover {
+          background-position: -96px -32px;
         }
-        li a.dribble {
-            background-position: -96px 0;
-            &:hover {
-                background-position: -96px -32px;
-            }
+      }
+
+      li a.google {
+        background-position: -128px 0;
+        &:hover {
+          background-position: -128px -32px;
         }
-        li a.google {
-            background-position: -128px 0;
-            &:hover {
-                background-position: -128px -32px;
-            }
+      }
+
+      li a.pinterest {
+          background-position: -196px 0;
+          &:hover {
+            background-position: -196px -32px;
+          }
         }
-        li a.pinterest {
-            background-position: -196px 0;
-            &:hover {
-                background-position: -196px -32px;
-            }
-        }
-    }   
-}
-
-
-strong { font-weight: 600; }
-.to-upper { text-transform: uppercase;}
-
-
-/*
- * Button styles
- */
-.btn {
-  margin-top: 15px;
-  display: inline-block;
-  border-radius: 0.25em;
-  padding: 10px;
-  font-weight: bold;
-  border-bottom: none !important;
-  text-decoration: none;
-
-  @include font-size(13px);
-
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  transition: background 0.2s;
-
-
-  &:active {
-    // @include transform(scale(0.96));
-  }
-}
-.btn.red {
-  background: $color-3;
-  color: $color-white;
-}
-.no-touch .btn.red:hover {
-  background-color: lighten($color-3, 10%);
-}
+      }   
+} 
