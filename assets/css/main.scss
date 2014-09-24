@@ -207,7 +207,7 @@ div.wc-container {
       height: auto;
       line-height: normal;
       background: transparent;
-      padding: .6em 1em;
+      padding: .6em 0em;
       border-top: none;
       color: $color-1;
       @include font-size(14px);
@@ -463,4 +463,71 @@ blockquote p {
 
 blockquote a {
   @extends %links;
+}
+
+.results-wrapper {
+  display: block;
+  width: 100%;
+  position:relative;
+}
+
+.results-wrapper .sidebar, .results-wrapper .detail-panel {
+  @include column(1);
+  padding-bottom: 1em;
+}
+
+.results-wrapper .sidebar {  
+  @include MQ(M) {  
+    @include column(.25);
+  }
+}
+.results-wrapper .detail-panel {
+  @include MQ(M) {  
+    @include column(.75);
+  }
+}
+
+.results-wrapper .sidebar .sub-nav-panel {
+  overflow: hidden;
+  @include MQ(M) {
+    max-width: 90%;
+  }
+}
+
+.results-wrapper .sidebar .sub-nav-panel .sub-nav-heading {
+  background: $color-1;
+  color: $color-white;
+  @include border-radius(.3em .3em 0 0);
+  padding: 1em;
+  @include font-size(14px);
+
+  a {
+    color: $color-white;
+  } 
+}
+
+.results-wrapper .sidebar .sub-nav-panel ul {
+  background: $color-white;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #E4E4E4;
+  // border-left: 1px solid #E4E4E4;
+  // border-right: 1px solid #E4E4E4;
+  @include border-radius(0 0 .3em .3em);
+  li {
+    line-height: 1em;
+    padding: 10px;
+    border-bottom: 1px solid #E4E4E4;
+  }
+  li a {
+    color: #7F868F;    
+    @include font-size(13px);
+
+    &:hover, &:focus {
+      color: $color-2;
+    }
+  }
+}
+
+.results-wrapper .detail-panel .detail-content {
+  max-width: 100%;
 }

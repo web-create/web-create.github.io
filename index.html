@@ -1,3 +1,33 @@
 ---
 layout: default
 ---
+
+<div class="results-wrapper">
+	<div class="sidebar">
+		<div class="sub-nav-panel">
+				
+			{% for dale in site.data.side-nav %}
+	        <!-- check to see if the data file has a submenu, and if so display it -->
+	          {% if dale.subcategories != null %}
+	            <div class="sub-nav-heading">
+	              <a href="{{ site.url }}{{ dale.url }}">{{ dale.title }}<i class="fa fa-angle-down"></i></a>	              
+	        {% else %}
+	          <!— display the top level navigation for items that don’t have a submenu -->
+	          <div class="sub-nav-heading">
+	            <a href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
+	        {% endif %}
+	          </div>
+	          <ul>
+	                {% for subcategory in dale.subcategories %}
+	                <li><a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+	                {% endfor %}
+	              </ul>
+	        {% endfor %}		
+		</div>
+	</div>
+	<div class="detail-panel">
+		<div class="detail-content">
+			
+		</div>
+	</div>
+</div>
