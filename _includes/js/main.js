@@ -1,3 +1,7 @@
 jQuery(document).ready(function($){
-    // todo: jquery stuff should need to put here.
+   	//open-close submenu on mobile
+    $('.nav-trigger').on('click', function(event){
+    	event.preventDefault();
+        $('#main-nav-ul').slideToggle();        
+    });
 });

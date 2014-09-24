@@ -49,8 +49,13 @@ layout: compress
                         <img src="{{ site.baseurl }}/assets/css/images/webcreate-lk-logo.png"/>
                     </a>
                 </div>
-                <nav class="wc-main-nav">                
-                    <ul>
+                <nav class="wc-main-nav">
+                    <span class="nav-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>                
+                    <ul id="main-nav-ul">
                         {% for item in site.data.main-nav %}
                             <li>
                                 <a href="{{ site.url }}{{ item.href }}">{{ item.title }}</a>

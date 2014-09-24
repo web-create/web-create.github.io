@@ -92,25 +92,68 @@ div.wc-container {
 }
 
 .wc-main-nav {
-  background-color:red;
-  position:absolute;
-  right: 5%;
   height: $header-height-S;
-  width: 44px;
-  height: 100%;
-
-  background: url('./images/cd-icon-menu.svg') no-repeat center center;
-  background-size: 44px 44px;
   cursor: pointer;
+  width: 100%;
+
+  .nav-trigger {    
+    right: 0;
+    display: block;
+    float:right;
+    padding-top: 5px;
+    width: 20px;
+    height: 44px;
+
+    @include MQ(M) {      
+      display: none;
+    }
+    span {
+      /* the span element is used to create the menu icon */
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: $color-black;
+        top: 25px;    
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s;
+
+         &:before, &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: inherit;
+            width: 100%;
+            height: 100%;
+
+            /* Force Hardware Acceleration in WebKit */
+         
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            -webkit-transition: -webkit-transform 0.3s, background 0s;
+            -moz-transition: -moz-transform 0.3s, background 0s;
+            transition: transform 0.3s, background 0s;
+        }
+         &::before {
+            top: -6px;
+        }
+
+        &::after {
+            bottom: -6px;
+        }
+    }
+  }
   ul {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    @include transform(translateY(-100%));
-
-    &.is-visible {
-      @include transform(translateY($header-height-S));
+    width: 100%;        
+    top: $header-height-S + 1;
+    display: none;
+    @include MQ(M) {
+      display: block;
     }
   }
 
@@ -120,10 +163,20 @@ div.wc-container {
     height: $header-height-S;
     line-height: $header-height-S;
     padding-left: 5%;
-    // background: $theme-color-6;
-    // border-top: 1px solid darken($theme-color-6, 5);
+    background: $color-white;
+    border-top: 1px solid #E7E7E7;
     text-transform: uppercase;
     color: $color-1;
+
+    @include font-size(13px);
+    z-index: 2;
+    @include MQ(M) {
+      @include font-size(14px);
+    }
+
+     .no-touch &:hover {
+        color: $color-2;
+      }
   }
 
   @include MQ(M) {
@@ -159,9 +212,7 @@ div.wc-container {
       color: $color-1;
       @include font-size(14px);
 
-      .no-touch &:hover {
-        color: $color-2;
-      }
+     
     }
     li.active {
       a {color: $color-2;}
