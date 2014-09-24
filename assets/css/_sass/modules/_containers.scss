@@ -1,0 +1,25 @@
+%container {
+    width: 90%;    
+    margin: 0 auto;
+    &::after { /* Clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.wc-c-container {
+	@extend %container;
+}
+
+.wc-c-container-small {
+	max-width: $S;
+}
+
+.wc-c-container-medium {
+	max-width: $M;
+}
+
+.wc-c-container-large {
+	max-width: $L;
+}

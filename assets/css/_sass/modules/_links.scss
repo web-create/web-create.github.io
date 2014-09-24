@@ -1,0 +1,6 @@
+%links {
+	border-bottom: 1px transparent solid;
+	&:hover, &:focus, &:active {
+		border-color: $color-1;
+	}
+}
