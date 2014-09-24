@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5, h6 { line-height: 1.5; }
 
-p { line-height: 1.4; @include font-size(14px);}
+p { line-height: 1.4; @include font-size(14px);padding-bottom: 15px;}
 
 
 // Utilities
@@ -30,3 +30,8 @@ ol {
 }
 
 h1, h2, h3, h4, h5, h6 { color: $body-text;}
+
+p.lead {
+
+	
+}

@@ -19,7 +19,7 @@ exclude:
 
 # Site development URL
 url: http://localhost:4000
-url: http://webcreate.lk
+#url: http://webcreate.lk
 
 # Build settings
 markdown: kramdown

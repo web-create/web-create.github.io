@@ -33,6 +33,7 @@ img {
 }
 
 a {
+  color: $color-1;
   text-decoration: none;
 }
 
@@ -268,7 +269,7 @@ div.wc-container {
             width: 6px;
             height: 6px;
             display: inline-block;
-            background: lighten($body-text, 60%);
+            background: lighten($body-text, 30%);
             border-radius: 50%;
             margin-left: 2px;
         }
@@ -347,3 +348,68 @@ div.wc-container {
         }
       }   
 } 
+
+.page-main-content {
+  display: block;
+  position:relative;
+  clear: left;  
+  padding: 1em 0;
+  @include MQ(M) {
+    padding: 1.5em 0;
+    min-height: 500px;
+  }
+}
+
+.page-panel {  
+  background: $color-white;
+  @include border-radius(.2em);
+  @include MQ(M) {
+    min-height: 500px;
+  }
+  border: 1px #ddd solid;
+  @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 0.04)) ;
+}
+.page-panel .panel-heading {
+  background-color: #f5f5f5;
+  border-bottom: 1px #ddd solid;
+  padding: 1em;
+  @include border-radius(.2em .2em 0 0 );
+}
+.page-panel .panel-body {
+  padding: 1em;
+  background-color: $color-white;  
+}
+
+.page-panel .panel-body p {
+  line-height: 1.6;
+}
+.page-panel .panel-body a{
+  @extend %links;
+}
+
+
+p.lead {  
+  @include font-size(18px);
+  @include MQ(M) {
+    @include font-size(25px);
+  }
+}
+
+blockquote {
+  border-left: 2px solid $color-1;
+  background-color: #f5f5f5;
+  padding: 15px 15px; 
+  margin-bottom: 20px;  
+
+  @include border-radius(0 .2em .2em 0px);
+}
+
+blockquote p {
+  @include font-size(14px);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+blockquote a {
+  @extends %links;
+}
