@@ -1,7 +1,7 @@
 - title: "Kind"
   subcategories:
     - subtitle: "Blog"
-      subhref: "/blogs-themes/"
+      subhref: "/blog-themes/"
     - subtitle: "News/Magazine"
       subhref: "/news-magazine/"
     - subtitle: "Portfolio/Personal"
