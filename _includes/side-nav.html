@@ -1,0 +1,34 @@
+<div class="sub-nav-panel">				
+{% for dale in site.data.side-nav %}
+	<!-- check to see if the data file has a submenu, and if so display it -->
+	{% if dale.subcategories != null %}
+	<div class='sub-nav-wrapper'>
+		<div class="sub-nav-heading">
+			<a href="{{ site.url }}{{ dale.url }}">{{ dale.title }}<i class="fa fa-angle-down"></i></a>
+	{% else %}
+	<!— display the top level navigation for items that don’t have a submenu -->	          	
+	<div class="sub-nav-heading">
+		<a href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
+	{% endif %}
+	</div>
+	{% for subcategory in dale.subcategories %}
+	{% assign currentMenu = 'collapse-in' %}
+	{% if page.url contains subcategory.subhref %}
+	    {% assign currentMenu = 'collapse-out' %}
+	    {% break %}
+	{% endif %}        	        	
+	{% endfor %}
+	<ul class="element {{ currentMenu }} {% if forloop.first %} side-first-item {% endif %}">
+	{% for subcategory in dale.subcategories %}
+	{% assign current = nil %}
+	{% if page.url contains subcategory.subhref %}
+	    {% assign current = 'active' %}
+	{% endif %}
+		<li  class="element {{ current }}">
+		<a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+</div>
+{% endfor %}		
+</div>
