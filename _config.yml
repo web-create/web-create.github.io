@@ -1,9 +1,7 @@
 # Site settings
 title: WebCreate.lk - Beautiful websites
 description: 
- Free Web Templates / Jekyll Themes / Processwire site profiles. 
- WebCreate.lk Specialized in developing well focused websites and 
- handy print designs.
+ Webcreate is a library showcasing beautiful web themes for Wordpress, Joomla, Drupal, processor and many other CMS and static generators like Jekyll.
 # Site live URL
 #url: http://webcreate.lk
 
@@ -18,8 +16,9 @@ exclude:
  - Gemfile.lock
 
 # Site development URL
-url: http://localhost:4000
+#url: http://localhost:4000
 url: http://webcreate.lk
+#port: 3000
 
 # Build settings
 markdown: kramdown
