@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blogs
+permalink: /blog-themes/
 ---
 
 <div class="results-wrapper">
