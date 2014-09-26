@@ -497,26 +497,40 @@ blockquote a {
 .results-wrapper .sidebar .sub-nav-panel .sub-nav-heading {
   background: $color-1;
   color: $color-white;
-  @include border-radius(.3em .3em 0 0);
+  @include border-radius(.2em .2em 0 0);
   padding: 1em;
   @include font-size(14px);
-
   a {
     color: $color-white;
   } 
 }
 
+.results-wrapper .sidebar .sub-nav-panel ul.collapse-in {
+  display: none;
+  &.side-first-item {
+    display: block;
+  }
+}
+.results-wrapper .sidebar .sub-nav-panel ul.collapse-out {
+  display: block;
+}
+.results-wrapper .sidebar .sub-nav-panel .sub-nav-wrapper {
+  margin-bottom: 5px;
+}
 .results-wrapper .sidebar .sub-nav-panel ul {
-  background: $color-white;
-  margin-bottom: 1em;
+  background: $color-white;  
   border-bottom: 1px solid #E4E4E4;
-  // border-left: 1px solid #E4E4E4;
-  // border-right: 1px solid #E4E4E4;
   @include border-radius(0 0 .3em .3em);
   li {
     line-height: 1em;
     padding: 10px;
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px dotted #E4E4E4;
+
+    &.active {
+      a {
+        color: $color-2;  
+      }
+    }
   }
   li a {
     color: #7F868F;    

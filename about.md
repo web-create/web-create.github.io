@@ -19,7 +19,6 @@ Our main focus is to discover and market the talent and effort of web designers,
 We highly appreciate your feedback. If there is anything you wish to say, please
 drop us an email on <mailto:webcreatelk@gmail.com>
 
-
 [gayan]: http://gayanvirajith.github.io
 [maheshika]: http://maheshikalakmali.github.io
 
