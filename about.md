@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <p class="lead">
-	It is all about beatiful websites.
+	It is all about beautiful websites.
 </p>
 
 Webcreate is a library of beautiful web templates for Jekyll, Wordpress, Joomla, 

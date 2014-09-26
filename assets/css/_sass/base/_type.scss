@@ -4,7 +4,7 @@ p { line-height: 1.4; @include font-size(14px);padding-bottom: 15px;}
 
 
 // Utilities
-.bold    { font-weight: bold; }
+.bold    { font-weight: 600; }
 .regular { font-weight: normal; }
 .italic  { font-style: italic; }
 .caps    { text-transform: uppercase; letter-spacing: .2em; }

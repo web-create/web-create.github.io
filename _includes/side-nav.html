@@ -1,16 +1,9 @@
-<div class="sub-nav-panel">				
+<div class="sub-nav-panel">		
+	<div class="side-heading-title">
+		Navigate web themes by
+	</div>				
 {% for dale in site.data.side-nav %}
 	<!-- check to see if the data file has a submenu, and if so display it -->
-	{% if dale.subcategories != null %}
-	<div class='sub-nav-wrapper'>
-		<div class="sub-nav-heading">
-			<a href="{{ site.url }}{{ dale.url }}">{{ dale.title }}<i class="fa fa-angle-down"></i></a>
-	{% else %}
-	<!— display the top level navigation for items that don’t have a submenu -->	          	
-	<div class="sub-nav-heading">
-		<a href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
-	{% endif %}
-	</div>
 	{% for subcategory in dale.subcategories %}
 	{% assign currentMenu = 'collapse-in' %}
 	{% if page.url contains subcategory.subhref %}
@@ -18,7 +11,25 @@
 	    {% break %}
 	{% endif %}        	        	
 	{% endfor %}
-	<ul class="element {{ currentMenu }} {% if forloop.first %} side-first-item {% endif %}">
+
+	{% assign icon = 'fa-angle-up'%}
+	{% if page.url == '/' and currentMenu == 'collapse-out' or forloop.first  %}
+		{% assign icon = 'fa-angle-down' %}
+	{% endif %}
+
+	{% if dale.subcategories != null %}
+	<div class='sub-nav-wrapper'>
+		<div class="sub-nav-heading">
+			<a class='side-nav-trigger' href="{{ site.url }}{{ dale.url }}">{{ dale.title }}</a>
+	{% else %}
+	<!— display the top level navigation for items that don’t have a submenu -->	          	
+	<div class="sub-nav-heading">
+		<a class='side-nav-trigger' href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
+	{% endif %}
+		<span><i class="fa {{ icon }}"></i></span>
+	</div>
+	
+	<ul class="element {% if forloop.first %} collapse-out {% else %} {{ currentMenu }} {% endif %}">
 	{% for subcategory in dale.subcategories %}
 	{% assign current = nil %}
 	{% if page.url contains subcategory.subhref %}
