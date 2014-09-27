@@ -2,17 +2,17 @@
 	<div class="side-heading-title">
 		Navigate web themes by
 	</div>				
-{% for dale in site.data.side-nav %}
+	{% for dale in site.data.side-nav %}
 	<!-- check to see if the data file has a submenu, and if so display it -->
 	{% for subcategory in dale.subcategories %}
-	{% assign currentMenu = 'collapse-in' %}
-	{% if page.url contains subcategory.subhref %}
-	    {% assign currentMenu = 'collapse-out' %}
-	    {% break %}
-	{% endif %}        	        	
+		{% assign currentMenu = 'collapse-in' %}
+		{% if page.url contains subcategory.subhref %}
+	  	  {% assign currentMenu = 'collapse-out' %}
+	    	{% break %}
+		{% endif %}        	        	
 	{% endfor %}
 
-	{% assign icon = 'fa-angle-up'%}
+	{% assign icon = 'fa-angle-right'%}
 	{% if page.url == '/' and currentMenu == 'collapse-out' or forloop.first  %}
 		{% assign icon = 'fa-angle-down' %}
 	{% endif %}

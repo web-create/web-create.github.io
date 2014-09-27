@@ -10,6 +10,7 @@
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 *, *:after, *:before {
@@ -23,6 +24,7 @@ body {
   }
   background-color: $body-bg;
   color: $body-text;
+  overflow-y: scroll;
 }
 
 img {
@@ -487,7 +489,10 @@ blockquote a {
 
 .results-wrapper .sidebar, .results-wrapper .detail-panel {
   @include column(1);
-  padding-bottom: 1.5em;
+  padding-bottom: .5em;
+  @include MQ(M) {
+    padding-bottom: 1.5em;
+  }
 }
 
 .results-wrapper .sidebar {  
@@ -540,6 +545,11 @@ blockquote a {
   @include border-radius(0 0 .3em .3em);
   // border-left: 1px solid #E4E4E4;
   // border-right: 1px solid #E4E4E4;
+    -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+
   li {
     line-height: 1em;
     padding: 12px;
@@ -564,6 +574,13 @@ blockquote a {
 
 .results-wrapper .detail-panel .detail-content {
   max-width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  @include MQ(M) {
+    padding-bottom: .5em;    
+  }
+
 }
 
 .featured-theme {
@@ -575,12 +592,17 @@ blockquote a {
 }
 
 .featured-theme .featured-theme-info {
-  h1 { @include font-size(20px);color: #444;}
+  h1 { @include font-size(20px);color: #444; font-weight: 600;}
   strong, p {
      @include font-size(13px);     
      line-height: 1.6;
   }
-
+  p { 
+    padding: .5em 0;
+    @include MQ(M) {
+      padding: 1em 0;
+    }
+  }
   strong {
     color: $color-2;
   }
@@ -588,14 +610,22 @@ blockquote a {
 }
 
 .featured-theme .featured-theme-info {
-  @include MQ(M) {    
+  padding-top: .5em; 
+  @include MQ(M) {   
+    padding-top:0; 
     @include column(.35);
   }
 }
 .featured-theme .featured-theme-img {
   @include MQ(M) {  
-    @include column(.65);
+    @include column(.60);
+    padding-right: 20px;
   }
+  img {
+    display: block;
+    @include border-radius(0 0 2px 2px);
+  }
+
 }
 
 .results-wrapper .sidebar .side-heading-title, 

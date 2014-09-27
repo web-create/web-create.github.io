@@ -11,9 +11,9 @@ jQuery(document).ready(function($){
 		selector = $(this).parent().find('span > i');
 
 		if (selector.hasClass("fa-angle-down"))
-			selector.removeClass("fa-angle-down").addClass("fa-angle-up");
+			selector.removeClass("fa-angle-down").addClass("fa-angle-right");
 		else
-			selector.removeClass("fa-angle-up").addClass("fa-angle-down");
+			selector.removeClass("fa-angle-right").addClass("fa-angle-down");
 		
 		ulSelector = $(this).parent().next('ul');
 
