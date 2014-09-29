@@ -13,22 +13,27 @@
 	{% endfor %}
 
 	{% assign icon = 'fa-angle-right'%}
+	{% assign headingState = 'non-active-heading'%}
+	{% if forloop.first %}
+		{% assign headingState = 'active-heading'%}
+	{% endif %}
 	{% if page.url == '/' and currentMenu == 'collapse-out' or forloop.first  %}
 		{% assign icon = 'fa-angle-down' %}
+		{% assign headingState = 'active-heading'%}
 	{% endif %}
 
 	{% if dale.subcategories != null %}
 	<div class='sub-nav-wrapper'>
-		<div class="sub-nav-heading">
+		<div class="sub-nav-heading {{ headingState }}">
 			<a class='side-nav-trigger' href="{{ site.url }}{{ dale.url }}">{{ dale.title }}</a>
 	{% else %}
 	<!— display the top level navigation for items that don’t have a submenu -->	          	
-	<div class="sub-nav-heading">
+	<div class="sub-nav-heading {{ headingState }}">
 		<a class='side-nav-trigger' href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
 	{% endif %}
 		<span><i class="fa {{ icon }}"></i></span>
 	</div>
-	
+	<div class="ul-wrapper">
 	<ul class="element {% if forloop.first %} collapse-out {% else %} {{ currentMenu }} {% endif %}">
 	{% for subcategory in dale.subcategories %}
 	{% assign current = nil %}
@@ -40,6 +45,7 @@
 		</li>
 	{% endfor %}
 	</ul>
+	</div>
 </div>
 {% endfor %}		
 </div>

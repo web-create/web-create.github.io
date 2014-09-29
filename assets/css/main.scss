@@ -525,6 +525,21 @@ blockquote a {
     color: $color-white;
   } 
   span {position:absolute;top: 35%;right:1em;}
+
+  &.non-active-heading {
+    background: #DDD;
+    color: #444;
+    a {
+      color: #444;
+    }
+  }
+  &.active-heading {
+    background: $color-1;
+    color: $color-white;
+    a {
+      color: $color-white;
+    }
+  }
 }
 
 .remove-border-radius-bottom {

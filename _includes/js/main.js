@@ -15,11 +15,13 @@ jQuery(document).ready(function($){
 		else
 			selector.removeClass("fa-angle-right").addClass("fa-angle-down");
 		
-		ulSelector = $(this).parent().next('ul');
+		headingSelector = ulSelector = $(this).parent();
 
-		ulSelector.slideToggle("slow");
-		
-		heading = $(this).parent();
+		headingSelector.toggleClass('non-active-heading active-heading');
+
+		ulSelector = $(this).parent().next('.ul-wrapper').children('ul');		
+
+		ulSelector.slideToggle("slow");		
 
     });
 });
