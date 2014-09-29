@@ -2,4 +2,21 @@
 layout: default
 title: Blogs
 ---
-TEST
+<div class="results-wrapper">	
+	<div class="sidebar">		
+		{% include side-nav.html %}
+	</div>
+	<div class="detail-panel">
+		<div class="detail-content">
+			<div class="detail-content-heading">
+				Theme of the week
+			</div>
+			{% include featured-theme.html %}
+		</div>
+		<div class="detail-content">
+			<div class="detail-content-heading">
+				All themes
+			</div>
+		</div>
+	</div>
+</div>
