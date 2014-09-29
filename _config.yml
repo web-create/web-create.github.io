@@ -3,8 +3,6 @@ title: WebCreate.lk - Beautiful websites
 description: 
  Webcreate is a library showcasing beautiful web themes for Wordpress, Joomla, 
  Drupal, ProcessWire and many other CMS and static generators like Jekyll.
-# Site live URL
-#url: http://webcreate.lk
 
 # Exclude files
 exclude: 
@@ -17,9 +15,7 @@ exclude:
  - Gemfile.lock
 
 # Site development URL
-# url: http://localhost:3000
 url: http://webcreate.lk
-# port: 3000
 
 # Build settings
 markdown: kramdown
