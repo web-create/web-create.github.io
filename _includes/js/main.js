@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 
 		headingSelector.toggleClass('non-active-heading active-heading');
 
-		ulSelector = $(this).parent().next('.ul-wrapper').children('ul');		
+		ulSelector = $(this).parent().next('ul');		
 
 		ulSelector.slideToggle("slow");		
 

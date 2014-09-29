@@ -509,12 +509,14 @@ blockquote a {
 .results-wrapper .sidebar .sub-nav-panel {
   overflow: hidden;
   @include MQ(M) {
-    max-width: 90%;
+    max-width: 90%;  
   }
 }
 
 .results-wrapper .sidebar .sub-nav-panel .sub-nav-heading {
   background: $color-1;
+  border-left: 1px $color-1 solid;
+  border-right: 1px $color-1 solid;
   color: $color-white;
   @include border-radius(.2em .2em 0 0);
   @include font-size(13px);
@@ -528,13 +530,15 @@ blockquote a {
 
   &.non-active-heading {
     background: #DDD;
+      border-left: 1px #DDD solid;
+  border-right: 1px #DDD solid;
     color: #444;
     a {
       color: #444;
     }
   }
   &.active-heading {
-    background: $color-1;
+    background: $color-1;    
     color: $color-white;
     a {
       color: $color-white;
@@ -542,6 +546,9 @@ blockquote a {
   }
 }
 
+.side-nav-ul-wrapper {
+  
+}
 .remove-border-radius-bottom {
   @include border-radius(.2em .2em 0 0);
 }
@@ -557,13 +564,15 @@ blockquote a {
 .results-wrapper .sidebar .sub-nav-panel ul {
   background: $color-white;  
   border-bottom: 1px solid #E4E4E4;
+  @include box-shadow(0, 1px, 1px, rgba(0,0,0,0.1));
   @include border-radius(0 0 .3em .3em);
-  // border-left: 1px solid #E4E4E4;
-  // border-right: 1px solid #E4E4E4;
+  border-left: 1px solid #E4E4E4;
+  border-right: 1px solid #E4E4E4;
     -webkit-backface-visibility: hidden;
    -moz-backface-visibility: hidden;
    -ms-backface-visibility: hidden;
    backface-visibility: hidden;
+
 
   li {
     line-height: 1em;
@@ -641,6 +650,10 @@ blockquote a {
     @include border-radius(0 0 2px 2px);
   }
 
+}
+
+.results-wrapper .sidebar .side-heading-title {
+  max-width: 90%;
 }
 
 .results-wrapper .sidebar .side-heading-title, 

@@ -1,7 +1,7 @@
-<div class="sub-nav-panel">		
 	<div class="side-heading-title">
 		Navigate web themes by
-	</div>				
+	</div>	
+<div class="sub-nav-panel">					
 	{% for dale in site.data.side-nav %}
 	<!-- check to see if the data file has a submenu, and if so display it -->
 	{% for subcategory in dale.subcategories %}
@@ -32,8 +32,7 @@
 		<a class='side-nav-trigger' href="{{ site.url }}{{ dale.href }}">{{ dale.title }}</a>
 	{% endif %}
 		<span><i class="fa {{ icon }}"></i></span>
-	</div>
-	<div class="ul-wrapper">
+	</div>	
 	<ul class="element {% if forloop.first %} collapse-out {% else %} {{ currentMenu }} {% endif %}">
 	{% for subcategory in dale.subcategories %}
 	{% assign current = nil %}
@@ -44,8 +43,7 @@
 		<a href="{{ site.url }}{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a>
 		</li>
 	{% endfor %}
-	</ul>
-	</div>
+	</ul>	
 </div>
 {% endfor %}		
 </div>
