@@ -16,6 +16,7 @@ exclude:
 
 # Site development URL
 url: http://webcreate.lk
+baseurl: ""
 
 # Build settings
 markdown: kramdown

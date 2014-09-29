@@ -12,7 +12,8 @@ permalink: /blog-themes/
 		<div class="detail-content">
 			<div class="detail-content-heading">
 				Theme of the week
-			</div>					
+			</div>
+			{% include featured-theme.html %}					
 		</div>
 		<div class="detail-content">
 			<div class="detail-content-heading">
