@@ -70,8 +70,8 @@ div.wc-container {
   // border-top: 1px solid darken($body-bg, 12%);
   background-color: $color-white;
 
-// background-color: darken($body-bg, 8%);
-    // border-top: 1px solid darken($body-bg, 12%);
+  background-color: darken($body-bg, 4%);
+  border-bottom: 1px solid darken($body-bg, 12%);
   height: $header-height-S;  
   position: relative;
   width: 100%;
@@ -653,7 +653,10 @@ blockquote a {
 }
 
 .results-wrapper .sidebar .side-heading-title {
-  max-width: 90%;
+  max-width: 100%;
+  @include MQ(M) {
+    max-width: 90%;
+  }
 }
 
 .results-wrapper .sidebar .side-heading-title, 
