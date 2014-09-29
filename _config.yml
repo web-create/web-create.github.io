@@ -19,7 +19,6 @@ exclude:
 # Site development URL
 # url: http://localhost:3000
 url: http://webcreate.lk
-baseurl: /
 # port: 3000
 
 # Build settings
