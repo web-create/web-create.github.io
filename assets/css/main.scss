@@ -11,6 +11,8 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  // Change Mobile Safari Highlight Color with CSS
+  -webkit-tap-highlight-color: transparent;
 }
 
 *, *:after, *:before {
