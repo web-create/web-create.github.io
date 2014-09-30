@@ -243,7 +243,7 @@ div.wc-container {
         letter-spacing: 2px;
         @include font-size(12px);
         @include MQ(M) {
-          @include font-size(15px);          
+          @include font-size(13px);          
         }
     }
     h4.title::before {
@@ -610,6 +610,8 @@ blockquote a {
 .featured-theme {
   display: block;
   width: 100%;
+  padding-bottom: 10px;
+  overflow: hidden;
 }
 .featured-theme .featured-theme-info, .featured-theme .featured-theme-img {
   @include column(1);
@@ -661,10 +663,26 @@ blockquote a {
 
 .results-wrapper .sidebar .side-heading-title, 
   .results-wrapper .detail-panel .detail-content .detail-content-heading {
-  @include font-size(14px);
+  @include font-size(12px);
+
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  padding-top: 10px;
   line-height: 1.5em;
-  border-bottom: 2px solid #d4d4d4;
+  // border-bottom: 2px solid #d4d4d4;
   color: #444;
+  text-transform: uppercase;
+
+   &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 2rem;
+        height: 2px;
+        background: $color-2;
+        overflow: hidden;
+    } 
+
+    @include MQ(M) {
+      @include font-size(13px);
+    }
 }
