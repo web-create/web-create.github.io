@@ -1,3 +1,4 @@
+{% assign post = site.categories.featured.first %}
 <div class="featured-theme">
 	<div class="featured-theme-img">
 		<div class="browser-frame-big">
@@ -8,13 +9,25 @@
 			<span class="menubar three"></span>				
 		</div>
 		<a href="#0">
-			<img src="{{ "/thumbnails/harmony-thumb.jpg" | prepend: site.baseurl | prepend: site.url }}">
+			<img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}">
 		</a>
 	</div>
 	<div class="featured-theme-info">
-		<h1>Harmony - A Free Jekyll Blog Theme</h1>
+		<h1>{{ post.title }}</h1>
 		<p>
-			A <strong>Free</strong> blog theme by <strong>Gayan Virajith</strong>. Build with <a href="#0">Jekyll</a> (static generator). It is responsive and retina ready. Created on 09th of September 2014. You can download this theme for free from <a class="bold" href="#0" target="_blank">Github</a> 
+			A <strong>{% if post.price != 0 %} premium {% else %} free {% endif %}
+			web theme</strong> suitable for 
+			{% for category in post.categories %} 
+				{% if category != 'featured'%}
+					{% if forloop.last %}
+					and <span class='bold'>{{ category }}</span>.
+					{% else %}
+					<span class='bold'>{{ category }}</span>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+			Created on {{ post.createdDate }}. You can {% if post.price != 0 %} 
+			purchase {% else %} download {% endif %} it for {% if post.price != 0 %} post.price {% else %} free {% endif %} from <a href="{{ post.themeHomePageUrl }}" class="bold">{{ post.themeHomePageName }}</a>
 		</p>		
 	</div>
 </div>
