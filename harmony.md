@@ -2,6 +2,7 @@
 layout: page
 title: Harmony jekyll theme has moved
 permalink: /harmony/
+redirect: http://gayanvirajith.github.io/harmony/
 ---
 
 <p class="lead">
