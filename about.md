@@ -2,6 +2,9 @@
 layout: page
 title: About webcreate.lk
 permalink: /about/
+sitemap:
+    priority: 0.5
+    changefreq: monthly
 ---
 
 <p class="lead">
