@@ -16,7 +16,9 @@ categories:
  - One-page
 tags:
  - Brand-new
- - IE-8-Comaptible
+ - Free
+options:
+ - Free 
 ---
 
 ## Simplify jekyll one page theme by Gayan Virajith

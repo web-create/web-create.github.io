@@ -17,9 +17,10 @@ categories:
  - Featured
 tags:
  - Brand-new
- - IE-7-8-Comaptible
-flags:
- - Featured
+ - IE-8-Comaptible
+ - Free
+options:
+ - Free
 ---
 
 ## Harmony jekyll theme by Gayan Virajith

@@ -17,6 +17,15 @@ title: IE-8 Compatible themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">
+				{% for post in site.posts %}
+					{% if post.tags != null and post.tags != empty and post.tags contains 'IE-8-Comaptible'%}
+						<div class="result-list-row">						
+							{% include result-item.html post=post %}						
+						</div>					
+					{% endif %}
+    			{% endfor %}					
+			</div>
 		</div>
 	</div>
 </div>

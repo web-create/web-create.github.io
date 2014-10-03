@@ -17,6 +17,15 @@ title: Free themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">
+				{% for post in site.posts %}
+					{% if post.options != null and post.options != empty and post.options contains 'Free'%}
+						<div class="result-list-row">						
+							{% include result-item.html post=post %}						
+						</div>					
+					{% endif %}
+    			{% endfor %}					
+			</div>
 		</div>
 	</div>
 </div>
