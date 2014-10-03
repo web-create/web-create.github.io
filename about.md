@@ -2,6 +2,7 @@
 layout: page
 title: About webcreate.lk
 permalink: /about/
+seoMeta: About webcreate.lk community project and its core founders.
 sitemap:
     priority: 0.5
     changefreq: monthly

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Photography themes
+seoMeta: A showcase and a libaray of best photography web templates/themes from webcreate. 
 ---
 <div class="results-wrapper">	
 	<div class="sidebar">		
@@ -17,7 +18,9 @@ title: Photography themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
-			{% include fetch-items-by-category.html selector = 'photography' %}
+			<div class="results-list">		
+				{% include fetch-items-by-category.html selector = 'photography' %}
+			</div>
 		</div>
 	</div>
 </div>
