@@ -1,12 +1,12 @@
 {% assign post = include.post %}
 <a href="{{ post.url | prepend: site.baseurl }}" class="thumbnail">
 	<div class="browser-frame-small">
-	<span class="btn-set"></span>				
-	<span class="textbar"></span>				
-	<span class="menubar one"></span>				
-	<span class="menubar two"></span>				
-	<span class="menubar three"></span>				
-</div>
+		<span class="btn-set"></span>				
+		<span class="textbar"></span>				
+		<span class="menubar one"></span>				
+		<span class="menubar two"></span>				
+		<span class="menubar three"></span>				
+	</div>
 	<img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}">
 </a>							      			
 <div class="description">
