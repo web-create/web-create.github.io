@@ -48,6 +48,32 @@
 }
 
 .browser-frame-big {
+  @extend %browser-frame;
+  height: 20px;
+}
+
+.browser-frame-small {
 	@extend %browser-frame;
-	height: 20px;
+	height: 15px;
+
+  .btn-set {    
+    top: 5px;    
+    width: 18px; 
+  }
+  .textbar {
+    height: 8px;
+    top: 4px;
+  }
+  .menubar {    
+    width: 10px;
+    &.one {
+        top: 4px;        
+    }
+    &.two {
+      top: 7px;        
+    }
+    &.three {
+      top: 10px;
+    }
+  }
 }

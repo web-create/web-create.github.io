@@ -1,0 +1,22 @@
+{% assign post = include.post %}
+<a href="{{ post.url | prepend: site.baseurl }}" class="thumbnail">
+	<div class="browser-frame-small">
+	<span class="btn-set"></span>				
+	<span class="textbar"></span>				
+	<span class="menubar one"></span>				
+	<span class="menubar two"></span>				
+	<span class="menubar three"></span>				
+</div>
+	<img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}">
+</a>							      			
+<div class="description">
+<h2>{{ post.title }}</h2>
+<p>
+	A <strong>{% if post.price != 0 %} premium {% else %} free {% endif %}
+	theme</strong> suitable for <span class='bold'>
+	{{ post.categories | array_to_sentence_string }}
+	</span>
+	Created on {{ post.createdDate }}. You can {% if post.price != 0 %} 
+	purchase {% else %} download {% endif %} it for {% if post.price != 0 %} post.price {% else %} free {% endif %} from <a href="{{ post.themeHomePageUrl }}" class="bold">{{ post.themeHomePageName }}</a>
+</p>
+</div>	

@@ -16,7 +16,7 @@
 		<h1>{{ post.title }}</h1>
 		<p>
 			A <strong>{% if post.price != 0 %} premium {% else %} free {% endif %}
-			web theme</strong> suitable for 
+			theme</strong> suitable for 
 			{% for category in post.categories %} 
 				{% if category != 'featured'%}
 					{% if forloop.last %}

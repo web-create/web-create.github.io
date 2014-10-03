@@ -17,6 +17,13 @@ layout: default
 			<div class="detail-content-heading">
 				All themes
 			</div>
+			<div class="results-list">
+				{% for post in site.posts %}
+					<div class="result-list-row">						
+						{% include result-item.html post=post %}
+					</div>					
+    			{% endfor %}					
+			</div>
 		</div>
 	</div>
 </div>

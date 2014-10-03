@@ -1,30 +1,27 @@
 ---
 layout: post
-title: Harmony jekyll theme
-permalink: /harmony-jekyll-theme
-thumbnail: harmony-thumb.jpg
+title: Simplify jekyll one page theme
+permalink: /simplify-jekyll-one-page-theme
+thumbnail: simplify-thumb.png
 author: Gayan Virajith
 liveDemoUrl: http://gayanvirajith.github.io
-downloadOrPurchaseUrl: https://github.com/web-create/harmony/releases/latest
+downloadOrPurchaseUrl: https://github.com/web-create/simplify
 themeHomePageName: Github 
 themeHomePageUrl: http://github.com
 price: 0
-createdDate: 09/09/2014
-featured: true
-categories:
+createdDate: 10/01/2014
+categories: 
  - Blog
  - Portfolio/Personal
- - Featured
+ - One-page
 tags:
  - Brand-new
- - IE-7-8-Comaptible
-flags:
- - Featured
+ - IE-8-Comaptible
 ---
 
-## Harmony jekyll theme by Gayan Virajith
+## Simplify jekyll one page theme by Gayan Virajith
 
-Harmony is a free responsive jekyll theme. Here are some good features.
+Simplify is a free responsive one-page scrolling jekyll theme. Here are some good features.
 
 - Build for jekyll 2.x
 - Support Google anaytics and RSS feeds
