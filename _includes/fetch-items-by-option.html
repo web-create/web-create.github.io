@@ -1,0 +1,13 @@
+{% assign selector = include.selector %}
+{% assign isFound = false %}
+{% for post in site.posts %}
+	{% if post.options != null and post.options != empty and post.options contains selector %}
+		{% assign isFound = true %}
+		<div class="result-list-row">						
+			{% include result-item.html post=post %}						
+		</div>					
+	{% endif %}
+{% endfor %}	
+{% if isFound == false %}
+	{% include no-results-notice.html %}
+{% endif %}	

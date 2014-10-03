@@ -17,6 +17,9 @@ title: Ecommerce themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">		
+				{% include fetch-items-by-category.html selector = 'ecommerce' %}
+			</div>
 		</div>
 	</div>
 </div>

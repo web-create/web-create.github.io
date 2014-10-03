@@ -18,13 +18,7 @@ title: Brand new themes
 				{{ page.title }}
 			</div>
 			<div class="results-list">
-				{% for post in site.posts %}
-					{% if post.tags != null and post.tags != empty and post.tags contains 'Brand-new'%}
-						<div class="result-list-row">						
-							{% include result-item.html post=post %}						
-						</div>					
-					{% endif %}
-    			{% endfor %}					
+				{% include fetch-items-by-tag.html selector = 'Brand-new'%}					
 			</div>
 		</div>
 	</div>

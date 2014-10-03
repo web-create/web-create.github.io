@@ -18,13 +18,7 @@ title: Free themes
 				{{ page.title }}
 			</div>
 			<div class="results-list">
-				{% for post in site.posts %}
-					{% if post.options != null and post.options != empty and post.options contains 'Free'%}
-						<div class="result-list-row">						
-							{% include result-item.html post=post %}						
-						</div>					
-					{% endif %}
-    			{% endfor %}					
+				{% include fetch-items-by-option.html selector='Free' %}			
 			</div>
 		</div>
 	</div>

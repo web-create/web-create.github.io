@@ -17,6 +17,9 @@ title: Blog themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">
+				{% include fetch-items-by-category.html selector = 'blog' %}			
+			</div>
 		</div>
 	</div>
 </div>

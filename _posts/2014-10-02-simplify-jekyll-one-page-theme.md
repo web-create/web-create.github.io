@@ -12,7 +12,7 @@ price: 0
 createdDate: 10/01/2014
 categories: 
  - Blog
- - Portfolio/Personal
+ - Portfolio/Personal 
  - One-page
 tags:
  - Brand-new

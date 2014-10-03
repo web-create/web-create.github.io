@@ -17,6 +17,9 @@ title: Forum themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">		
+				{% include fetch-items-by-category.html selector = 'forum' %}
+			</div>
 		</div>
 	</div>
 </div>

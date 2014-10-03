@@ -17,6 +17,9 @@ title: News/Magazine themes
 			<div class="detail-content-heading">
 				{{ page.title }}
 			</div>
+			<div class="results-list">				
+				{% include fetch-items-by-category.html selector = 'news/magazine' %}
+			</div>
 		</div>
 	</div>
 </div>
