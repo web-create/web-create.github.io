@@ -4,7 +4,7 @@ title: Harmony jekyll theme
 permalink: /harmony-jekyll-theme
 thumbnail: harmony-thumb.jpg
 author: Gayan Virajith
-liveDemoUrl: http://gayanvirajith.github.io
+liveDemoUrl: http://gayanvirajith.github.io/harmony
 downloadOrPurchaseUrl: https://github.com/web-create/harmony/releases/latest
 themeHomePageName: Github 
 themeHomePageUrl: http://github.com
@@ -23,7 +23,7 @@ options:
  - Free
 ---
 
-## Harmony jekyll theme by Gayan Virajith
+## Harmony jekyll theme
 
 Harmony is a free responsive jekyll theme. Here are some good features.
 
@@ -43,6 +43,8 @@ A little quote from [Jekyll official website][jekyllrb]
 
 > It takes a template directory containing raw text files in various formats, runs it through [Markdown][markdown] (or [Textile][textile]) and Liquid converters, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind [GitHub Pages][github-pages], which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.
 > - jekyllrb.com
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 
 [readme]: https://github.com/gayanvirajith/harmony
 [jekyllrb]: http://jekyllrb.com/
