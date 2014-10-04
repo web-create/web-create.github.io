@@ -618,6 +618,11 @@ blockquote a {
   padding-bottom: 10px;
   overflow: hidden;
 }
+
+.featured-theme .theme-navigate-buttons, .theme-detail .theme-navigate-buttons {
+  padding: 1em 0;
+}
+
 .featured-theme .theme-info, .featured-theme .theme-img-and-data,
 .featured-theme .theme-info, .theme-detail .theme-img-and-data {
   @include column(1);
