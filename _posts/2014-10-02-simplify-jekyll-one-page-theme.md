@@ -4,7 +4,7 @@ title: Simplify jekyll one page theme
 permalink: /simplify-jekyll-one-page-theme
 thumbnail: simplify-thumb.png
 author: Gayan Virajith
-liveDemoUrl: http://gayanvirajith.github.io
+liveDemoUrl: http://gayanvirajith.github.io/simplify
 downloadOrPurchaseUrl: https://github.com/web-create/simplify
 themeHomePageName: Github 
 themeHomePageUrl: http://github.com
