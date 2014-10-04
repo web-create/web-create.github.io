@@ -5,7 +5,7 @@ layout: default
 	<h1 class="full-row">
 		{{ page.title }}
 		<small>
-			Created By Gayan Virajith on 
+			Created by {{ page.author }} on 
 			<a href="{{ post.themeHomePageUrl }}" class="bold">
 				{{ page.themeHomePageName }}
 			</a>
@@ -46,6 +46,21 @@ layout: default
 						Created on {{ post.createdDate }}. You can {% if post.price != 0 %} 
 						purchase {% else %} download {% endif %} it for {% if post.price != 0 %} post.price {% else %} free {% endif %} from <a href="{{ post.themeHomePageUrl }}" class="bold">{{ post.themeHomePageName }}</a>
 					</p>		
+					<div class="theme-navigate-buttons">
+						<a class="btn btn-secondary"  href="{{ page.liveDemoUrl }}"
+						 target="_blank">
+							Live Demo	
+						</a>
+						<a class="btn btn-important" href="{{ page.downloadOrPurchaseUrl }}"
+						 target="_blank">
+							{% if page.price != 0 %}
+								Purchase								
+							{% else %}
+								Download
+							{% endif %}
+
+						</a>
+					</div>					
 				</div>
 			</div>
 			<div class="theme-detail">
